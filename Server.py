@@ -10,10 +10,6 @@ with SimpleXMLRPCServer(('localhost', 8000),
                         requestHandler=RequestHandler) as server:
     server.register_introspection_functions()
 
-    # Register pow() function; this will use the value of
-    # pow.__name__ as the name, which is just 'pow'.
-    # server.register_function(pow)
-
     # Register a function under a different name
     def add(x, y):
         return x + y
@@ -37,3 +33,7 @@ with SimpleXMLRPCServer(('localhost', 8000),
 
     # Run the server's main loop
     server.serve_forever()
+
+     # Register pow() function; this will use the value of
+    # pow.__name__ as the name, which is just 'pow'.
+    # server.register_function(pow)
